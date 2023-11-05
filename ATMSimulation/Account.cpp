@@ -21,6 +21,11 @@ void Account::deposit(double amount)
     _balance += amount;
 }
 
+std::string Account::getAccountHolderName() const
+{
+    return _accountHolderName;
+}
+
 // Gets the account balance
 double Account::getBalance() const
 {

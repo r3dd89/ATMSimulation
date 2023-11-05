@@ -22,6 +22,9 @@ public:
 	// Method to deposit money into the account
 	void deposit(double amount);
 
+	// Getter method for the account holder's name
+	std::string getAccountHolderName() const;
+
 	// Getter method for account balance
 	double getBalance() const;
 
