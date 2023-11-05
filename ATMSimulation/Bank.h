@@ -31,5 +31,22 @@ public:
 		return newAccount;
 	}
 
+	// Finds an account by the account number
+	Account* findAccount(int accountNumber)
+	{
+		auto it = std::find_if(_accounts.begin(), _accounts.end(), [accountNumber](const Account& account)
+			{
+				return account.getAccountNumber() == accountNumber;
+			});
+		if (it != _accounts.end())
+		{
+			return &(*it);
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
 };
 
