@@ -20,7 +20,15 @@ public:
 	Account createAccount(const std::string& name, int pin, double initialDeposit)
 	{
 		// Ensures the initial deposit meets the minimum requirements
+		if (initialDeposit < 25)
+		{
+			throw std::invalid_argument("Initial deposit must be at least $25");
+		}
 
+		int accountNumber = _accountNumber++;
+		Account newAccount(accountNumber, name, pin, initialDeposit);
+		_accounts.push_back(newAccount);
+		return newAccount;
 	}
 
 };
